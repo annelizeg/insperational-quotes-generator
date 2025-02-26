@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
     <link rel="stylesheet" href="src/style.css" />
     <title>AI Insperational Quotes Generator</title>
   </head>
@@ -12,7 +13,7 @@
         <h1>AI Insperational Quote Generator</h1>
       </header>
       <main>
-        <form>
+        <form id="quote-generating-form">
           <input
             type="text"
             placeholder="Please enter a topic for your quote?"
@@ -20,20 +21,11 @@
             required
             autocomplete="off"
             class="instructions"
+            id="instructions"
           />
           <input type="submit" class="submit-button" />
         </form>
-        <div class="insperational-quote">
-          "It is often the small steps,
-          <br />
-          not the giant leaps,
-          <br />
-          that bring about the
-          <br />
-          most lasting change."
-          <br />
-          — Queen Elizabeth II
-        </div>
+        <div class="insperational-quote" id="quote"></div>
       </main>
 
       <footer>
