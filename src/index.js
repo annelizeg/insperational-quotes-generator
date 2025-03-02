@@ -15,17 +15,19 @@ function generateQuote(event) {
   let instructionsInput = document.querySelector("#user-instructions");
   let apiKey = "feb0504864ab3c8o978403c9t3b099b5";
   let context =
-    "You are a very positive, optimist and insperational AI assistent. You like to generate short 4 line insperational qoutes in basic HTML, separate each line with an <br/>. Make sure to follow the user instructions. Only provide the quote without stating that it is in HTML. Right at the bottom, sign the quote with '- Shecodes AI' inside a <strong> and <em> element.";
+    "You are a very positive, optimist and insperational AI assistent. You like to generate short 4 line insperational qoutes in basic HTML and each time separating the lines with <br/> elements. Make sure to follow the user instructions. Only provide the quote without stating that it is in HTML. Right at the bottom of the quote, on a seperate line, sign the quote with '- Shecodes AI' inside a <strong> and <em> element. Please behave.";
   let prompt = `User instructions: Please generate an insperational quote about ${instructionsInput.value}`;
   let apiUrl = `https://api.shecodes.io/ai/v1/generate?prompt=${prompt}&context=${context}&key=${apiKey}`;
+
+  let quoteElement = document.querySelector("#quote");
+  quoteElement.classList.remove("hidden");
+  quoteElement.innerHTML = `<div class = "generating-blink">⏳ Generating a insperational qoute for you about ${instructionsInput.value} </div>`;
 
   console.log("generating quote......");
   console.log(`Prompt: ${prompt}`);
   console.log(`Context: ${context}`);
 
   axios.get(apiUrl).then(displayquote);
-
-  //   console.log(quoteElement);
 }
 
 let quoteFormElement = document.querySelector("#quote-generating-form");

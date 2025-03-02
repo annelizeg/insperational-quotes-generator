@@ -14,19 +14,22 @@
         <h1>AI Insperational Quote Generator</h1>
       </header>
       <main>
-        <form id="quote-generating-form">
-          <input
-            type="text"
-            placeholder="Please enter a topic for your quote?"
-            autofocus
-            required
-            autocomplete="off"
-            class="instructions"
-            id="user-instructions"
-          />
-          <input type="submit" class="submit-button" />
-        </form>
-        <div class="insperational-quote" id="quote"></div>
+        <div class="form-container">
+          <form id="quote-generating-form">
+            <input
+              type="text"
+              placeholder="Please enter a topic for your quote?"
+              autofocus
+              required
+              autocomplete="off"
+              class="instructions"
+              id="user-instructions"
+            />
+            <input type="submit" class="submit-button" />
+          </form>
+          <div class="hint">i.e: Flower, Courage or Beauty</div>
+        </div>
+        <div class="insperational-quote hidden" id="quote"></div>
       </main>
 
       <footer>
